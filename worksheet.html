@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protagonist Development — William J. Stribling</title>
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link href="https://fonts.cdnfonts.com/css/futura-condensed-pt" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="worksheet-page">
+    <div id="cursor-trail"></div>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">William J. Stribling</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directing.html">Directing</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="resources.html">Client Resources</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="worksheet-layout">
+
+        <main class="worksheet-main">
+
+            <div class="worksheet-header">
+                <h1>Protagonist<br>Development</h1>
+                <p>Treat this worksheet like a crossword puzzle. Fill out what you know confidently, and those answers will help you fill in the blanks.</p>
+            </div>
+
+            <div class="worksheet">
+
+                <!-- Protagonist Name & Age -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Protagonist Name &amp; Age</h2>
+                    </div>
+                    <input type="text" id="protagonist-name" placeholder="Enter name and age...">
+                </div>
+
+                <!-- Core Essence -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Core Essence</h2>
+                        <span class="question">What is the key trait that defines your protagonist in this particular story?</span>
+                        <span class="examples">examples: In Toy Story, Woody takes pride in being Andy's favorite toy. In Black Swan, Nina is a perfectionist determined to dance the lead part in Swan Lake.</span>
+                    </div>
+                    <textarea id="core-essence" placeholder="Enter your protagonist's core essence..."></textarea>
+                </div>
+
+                <!-- BUT transition -->
+                <div class="arrow-container">
+                    <svg class="arrow" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg" width="40" height="80">
+                        <path d="M 50 0 L 50 150 M 30 130 L 50 150 L 70 130" stroke="#7B9E87" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="but-section">
+                    <h3>BUT!</h3>
+                    <p>Taken too far, their Core Essence becomes their...</p>
+                </div>
+
+                <!-- False Belief System -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>False Belief System</h2>
+                        <span class="question">What is the distorted worldview that makes your protagonist vulnerable to the story about to unfold?</span>
+                        <span class="examples">examples: In Toy Story, Woody refuses to share the spotlight. In Black Swan, Nina will do anything to be "perfect." In Little Miss Sunshine, Olive believes her dad won't love her if she doesn't win the pageant.</span>
+                    </div>
+                    <textarea id="false-belief" placeholder="Enter your protagonist's false belief system..."></textarea>
+                </div>
+
+                <!-- Skill -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Skill</h2>
+                        <span class="question">Do they have a tangible ability that will come in handy?</span>
+                        <span class="examples">examples: In Mean Girls, Cady is great at math. In Collateral, Max is a fantastic cab driver who knows LA like the back of his hand. In Sound of Metal, Ruben is a skilled musician.</span>
+                    </div>
+                    <textarea id="skill" placeholder="Enter your protagonist's skill..."></textarea>
+                </div>
+
+                <!-- Main Relationships -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Main Relationships</h2>
+                        <span class="question">Who are the most significant characters in the orbit of your protagonist?</span>
+                    </div>
+                    <textarea id="relationships" placeholder="List the main relationships..."></textarea>
+                </div>
+
+                <!-- High School Superlative & Antagonist -->
+                <div class="section">
+                    <div class="two-col-section">
+                        <div>
+                            <div class="section-header">
+                                <h2>In High School, they were voted most likely to...</h2>
+                            </div>
+                            <textarea id="superlative" placeholder="Enter superlative..."></textarea>
+                        </div>
+                        <div>
+                            <div class="section-header">
+                                <h2>Antagonist</h2>
+                                <span class="question">Who is their adversary?</span>
+                            </div>
+                            <textarea id="antagonist" placeholder="Enter antagonist..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inner Conflict -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Inner Conflict</h2>
+                    </div>
+                    <div class="two-col-section">
+                        <div>
+                            <h3 style="margin-bottom: 10px;">Who do they present to be?</h3>
+                            <span class="examples">Example: Woody — confident leader. "Nobody's getting replaced."</span>
+                            <textarea id="present" placeholder="Who do they present to be?"></textarea>
+                        </div>
+                        <div>
+                            <h3 style="margin-bottom: 10px;">Who are they on the inside?</h3>
+                            <span class="examples">Example: Woody — insecure, terrified of being replaced.</span>
+                            <textarea id="inside" placeholder="Who are they on the inside?"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personality Spectrum -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Personality Spectrum</h2>
+                        <span class="question">Where do they fall on this scale?</span>
+                    </div>
+                    <input type="range" id="personality-scale" min="1" max="10" value="5">
+                    <div class="slider-labels">
+                        <span class="slider-label">Introvert</span>
+                        <span class="slider-label">Extrovert</span>
+                    </div>
+                </div>
+
+                <!-- Enneagram -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Enneagram Number</h2>
+                        <span class="question">Click a number to select, or <a href="https://enneagramuniverse.com" target="_blank" style="color: var(--accent);">take the test at enneagramuniverse.com</a></span>
+                    </div>
+                    <div class="enneagram-container">
+                        <svg viewBox="0 0 400 400" class="enneagram-diagram" style="max-width: 380px; width: 100%;">
+                            <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+                            <line x1="200" y1="50" x2="280" y2="290" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+                            <line x1="280" y1="290" x2="68" y2="165" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+                            <line x1="68" y1="165" x2="332" y2="165" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+                            <line x1="332" y1="165" x2="120" y2="290" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+                            <line x1="120" y1="290" x2="200" y2="50" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+                            <circle cx="200" cy="200" r="60" fill="rgba(123,158,135,0.07)" stroke="rgba(123,158,135,0.2)" stroke-width="2" class="center-circle"/>
+                            <text x="200" y="195" text-anchor="middle" font-size="48" fill="#7B9E87" font-weight="bold" class="center-number"></text>
+                            <text x="200" y="220" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.55)" font-weight="600" class="center-label"></text>
+                            <g class="enneagram-point" data-number="9" data-label="Peacemaker">
+                                <circle cx="200" cy="50" r="22" fill="rgba(255,255,255,0.9)" stroke="rgba(123,158,135,0.4)" stroke-width="2"/>
+                                <text x="200" y="58" text-anchor="middle" font-size="18" fill="#0D0D0D" font-weight="bold">9</text>
+                            </g>
+                            <g class="enneagram-point" data-number="1" data-label="Reformer">
+                                <circle cx="296" cy="104" r="22" fill="rgba(255,255,255,0.9)" stroke="rgba(123,158,135,0.4)" stroke-width="2"/>
+                                <text x="296" y="112" text-anchor="middle" font-size="18" fill="#0D0D0D" font-weight="bold">1</text>
+                            </g>
+                            <g class="enneagram-point" data-number="2" data-label="Helper">
+                                <circle cx="342" cy="188" r="22" fill="rgba(255,255,255,0.9)" stroke="rgba(123,158,135,0.4)" stroke-width="2"/>
+                                <text x="342" y="196" text-anchor="middle" font-size="18" fill="#0D0D0D" font-weight="bold">2</text>
+                            </g>
+                            <g class="enneagram-point" data-number="3" data-label="Achiever">
+                                <circle cx="323" cy="275" r="22" fill="rgba(255,255,255,0.9)" stroke="rgba(123,158,135,0.4)" stroke-width="2"/>
+                                <text x="323" y="283" text-anchor="middle" font-size="18" fill="#0D0D0D" font-weight="bold">3</text>
+                            </g>
+                            <g class="enneagram-point" data-number="4" data-label="Individualist">
+                                <circle cx="248" cy="338" r="22" fill="rgba(255,255,255,0.9)" stroke="rgba(123,158,135,0.4)" stroke-width="2"/>
+                                <text x="248" y="346" text-anchor="middle" font-size="18" fill="#0D0D0D" font-weight="bold">4</text>
+                            </g>
+                            <g class="enneagram-point" data-number="5" data-label="Investigator">
+                                <circle cx="152" cy="338" r="22" fill="rgba(255,255,255,0.9)" stroke="rgba(123,158,135,0.4)" stroke-width="2"/>
+                                <text x="152" y="346" text-anchor="middle" font-size="18" fill="#0D0D0D" font-weight="bold">5</text>
+                            </g>
+                            <g class="enneagram-point" data-number="6" data-label="Loyalist">
+                                <circle cx="77" cy="275" r="22" fill="rgba(255,255,255,0.9)" stroke="rgba(123,158,135,0.4)" stroke-width="2"/>
+                                <text x="77" y="283" text-anchor="middle" font-size="18" fill="#0D0D0D" font-weight="bold">6</text>
+                            </g>
+                            <g class="enneagram-point" data-number="7" data-label="Enthusiast">
+                                <circle cx="58" cy="188" r="22" fill="rgba(255,255,255,0.9)" stroke="rgba(123,158,135,0.4)" stroke-width="2"/>
+                                <text x="58" y="196" text-anchor="middle" font-size="18" fill="#0D0D0D" font-weight="bold">7</text>
+                            </g>
+                            <g class="enneagram-point" data-number="8" data-label="Challenger">
+                                <circle cx="104" cy="104" r="22" fill="rgba(255,255,255,0.9)" stroke="rgba(123,158,135,0.4)" stroke-width="2"/>
+                                <text x="104" y="112" text-anchor="middle" font-size="18" fill="#0D0D0D" font-weight="bold">8</text>
+                            </g>
+                        </svg>
+
+                        <div id="enneagram-description" class="enneagram-description"></div>
+
+                        <select id="enneagram">
+                            <option value="">Select Enneagram Type</option>
+                            <option value="1">Type 1 - The Reformer</option>
+                            <option value="2">Type 2 - The Helper</option>
+                            <option value="3">Type 3 - The Achiever</option>
+                            <option value="4">Type 4 - The Individualist</option>
+                            <option value="5">Type 5 - The Investigator</option>
+                            <option value="6">Type 6 - The Loyalist</option>
+                            <option value="7">Type 7 - The Enthusiast</option>
+                            <option value="8">Type 8 - The Challenger</option>
+                            <option value="9">Type 9 - The Peacemaker</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Order vs. Chaos -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Order vs. Chaos</h2>
+                        <span class="question">They begin the film in a state of...</span>
+                    </div>
+                    <div class="checkbox-group" style="flex-direction: column; gap: 16px;">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="order" name="state" value="order">
+                            <label for="order">Order / Equilibrium — A Status Quo they would like to maintain</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="chaos" name="state" value="chaos">
+                            <label for="chaos">Chaos / Imbalance — A Status Quo they wish was different</label>
+                        </div>
+                    </div>
+                    <div style="margin-top: 40px;">
+                        <h3 style="margin-bottom: 10px;">Status Quo</h3>
+                        <span class="examples">Describe the pattern of their life that would continue if the movie never happened.</span>
+                        <textarea id="status-quo" placeholder="Describe the status quo..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Catalyst -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>The Catalyst</h2>
+                        <span class="examples">aka Call to Action, Inciting Incident, Story Event</span>
+                        <span class="question">Describe the event that disrupts the Status Quo</span>
+                    </div>
+                    <textarea id="catalyst" placeholder="Describe the catalyst event..."></textarea>
+                    <div class="checkbox-group" style="flex-direction: column; gap: 16px; margin-top: 32px;">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="opportunity" name="catalyst-type" value="opportunity">
+                            <label for="opportunity">Opportunity — most commonly paired with Chaos / Imbalance</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="problem" name="catalyst-type" value="problem">
+                            <label for="problem">Problem — most commonly paired with Order / Equilibrium</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Act One End -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>At the End of Act One...</h2>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 32px;">
+                        <div>
+                            <h3 style="margin-bottom: 10px;">What do they want?</h3>
+                            <textarea id="want" placeholder="What do they want?"></textarea>
+                        </div>
+                        <div>
+                            <h3 style="margin-bottom: 10px;">What stands in their way?</h3>
+                            <textarea id="obstacle" placeholder="What stands in their way?"></textarea>
+                        </div>
+                        <div>
+                            <h3 style="margin-bottom: 10px;">What happens if they don't get it?</h3>
+                            <textarea id="stakes" placeholder="What happens if they don't get it?"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Central Dramatic Question -->
+                <div class="section central-question-section">
+                    <div class="section-header">
+                        <h2>Central Dramatic Question</h2>
+                    </div>
+                    <span class="examples">Will Dorothy get home to Kansas? Will Olive win Little Miss Sunshine? Will Ruben accept his deafness? Is Neo "The One?"</span>
+                    <div style="position: relative; margin-top: 12px;">
+                        <textarea id="cdq" placeholder="Enter your central dramatic question..."></textarea>
+                        <div class="question-icon">?</div>
+                    </div>
+                </div>
+
+                <!-- Best and Worst Case Scenarios -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Best &amp; Worst Case Scenarios</h2>
+                    </div>
+                    <div class="two-col-section">
+                        <div class="scenario-box">
+                            <h4>Best Case Scenario</h4>
+                            <span class="examples">Woody returns to Andy's room. Olive wins the pageant. Ruben gets his hearing back.</span>
+                            <textarea id="best-case" placeholder="If everything goes perfectly..."></textarea>
+                        </div>
+                        <div class="scenario-box">
+                            <h4>Worst Case Scenario</h4>
+                            <span class="examples">Andy moves away, Woody is left behind. Olive loses. Ruben remains deaf forever.</span>
+                            <textarea id="worst-case" placeholder="If everything goes wrong..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organizing Principle -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Organizing Principle</h2>
+                        <span class="question">The three worlds of your screenplay</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 28px;">
+                        <div>
+                            <h3 style="margin-bottom: 8px;">Act 1 — "Home"</h3>
+                            <span class="examples">Black Swan: Auditions · Little Miss Sunshine: Home · Sound of Metal: Touring Musicians</span>
+                            <input type="text" id="act1-home" placeholder="The world of Act 1...">
+                        </div>
+                        <div>
+                            <h3 style="margin-bottom: 8px;">Act 2 — "The Road"</h3>
+                            <span class="examples">Black Swan: Rehearsal · Little Miss Sunshine: On the Road · Sound of Metal: Recovery Shelter</span>
+                            <input type="text" id="act2-road" placeholder="The world of Act 2...">
+                        </div>
+                        <div>
+                            <h3 style="margin-bottom: 8px;">Act 3 — "Worst Place in the World"</h3>
+                            <span class="examples">Black Swan: Opening Night · Little Miss Sunshine: The Pageant · Sound of Metal: Paris</span>
+                            <input type="text" id="act3-worst" placeholder="The world of Act 3...">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Three Levels of Stakes -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Three Levels of Stakes</h2>
+                        <span class="question">Want to learn more about stakes and endings? <a href="https://www.pandemoniuminc.com/endings-video" target="_blank" style="color: var(--accent);">Watch this video</a></span>
+                    </div>
+                    <div class="stakes-section">
+                        <div class="stakes-column">
+                            <h4>External Stakes</h4>
+                            <span class="examples">Little Miss Sunshine: Will Olive win Little Miss Sunshine?</span>
+                            <input type="text" id="external-dominant" placeholder="DOMINANT viewpoint...">
+                            <div style="text-align: center; font-size: 0.72rem; letter-spacing: 2px; color: var(--muted); margin: 12px 0; text-transform: uppercase; font-family: 'Futura Condensed PT', sans-serif;">vs.</div>
+                            <input type="text" id="external-underdog" placeholder="UNDERDOG viewpoint...">
+                        </div>
+                        <div class="stakes-column">
+                            <h4>Internal Stakes</h4>
+                            <span class="examples">Little Miss Sunshine: Olive's fear of failure and losing her father's love</span>
+                            <input type="text" id="internal-dominant" placeholder="DOMINANT viewpoint...">
+                            <div style="text-align: center; font-size: 0.72rem; letter-spacing: 2px; color: var(--muted); margin: 12px 0; text-transform: uppercase; font-family: 'Futura Condensed PT', sans-serif;">vs.</div>
+                            <input type="text" id="internal-underdog" placeholder="UNDERDOG viewpoint...">
+                        </div>
+                        <div class="stakes-column">
+                            <h4>Philosophical Stakes</h4>
+                            <span class="examples">Little Miss Sunshine: Winners vs. Losers</span>
+                            <input type="text" id="philosophical-dominant" placeholder="DOMINANT viewpoint...">
+                            <div style="text-align: center; font-size: 0.72rem; letter-spacing: 2px; color: var(--muted); margin: 12px 0; text-transform: uppercase; font-family: 'Futura Condensed PT', sans-serif;">vs.</div>
+                            <input type="text" id="philosophical-underdog" placeholder="UNDERDOG viewpoint...">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="worksheet-actions">
+                    <button id="clear-btn" class="btn btn-secondary">Clear All</button>
+                    <button id="save-btn" class="btn btn-primary">Save Progress</button>
+                    <button id="download-btn" class="btn btn-download">Download PDF</button>
+                </div>
+
+            </div><!-- end .worksheet -->
+
+        </main>
+
+        <aside class="answers-sidebar" id="answers-sidebar">
+            <div class="sidebar-title">Your Answers</div>
+            <div id="sidebar-content">
+                <p class="sidebar-placeholder">Fill in answers to see them here...</p>
+            </div>
+        </aside>
+
+    </div><!-- end .worksheet-layout -->
+
+    <script src="script.js"></script>
+</body>
+</html>
