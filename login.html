@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William J. Stribling</title>
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link href="https://fonts.cdnfonts.com/css/futura-condensed-pt" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: var(--black);
+        }
+        .site-gate {
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .site-gate .logo-text {
+            font-family: 'Futura Condensed PT', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 48px;
+            display: block;
+        }
+        .site-gate h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 40px;
+            line-height: 0.95;
+        }
+        .site-gate input[type="password"] {
+            width: 100%;
+            padding: 16px 20px;
+            background: var(--surface);
+            color: var(--off-white);
+            border: 1px solid var(--rule);
+            font-family: 'Futura Condensed PT', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            margin-bottom: 12px;
+            text-align: center;
+            letter-spacing: 4px;
+        }
+        .site-gate input[type="password"]:focus {
+            border-color: var(--accent);
+        }
+        .site-gate input::placeholder {
+            letter-spacing: 2px;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+        .site-gate .error {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: #c0392b;
+            text-transform: uppercase;
+            min-height: 20px;
+            margin-top: 12px;
+            font-family: 'Futura Condensed PT', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="site-gate">
+        <span class="logo-text">William J. Stribling</span>
+        <h1>Site<br>Preview</h1>
+        <form id="gate-form">
+            <input type="password" id="gate-input" placeholder="Enter password" autofocus />
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Enter</button>
+        </form>
+        <p class="error" id="gate-error"></p>
+    </div>
+
+    <script>
+        const SITE_PASSWORD = 'protagonist2026';
+        const form = document.getElementById('gate-form');
+        const input = document.getElementById('gate-input');
+        const error = document.getElementById('gate-error');
+
+        // If already authenticated, go straight to site
+        if (sessionStorage.getItem('siteAuthenticated') === 'true') {
+            window.location.href = 'index.html';
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (input.value === SITE_PASSWORD) {
+                sessionStorage.setItem('siteAuthenticated', 'true');
+                const dest = new URLSearchParams(window.location.search).get('redirect') || 'index.html';
+                window.location.href = dest;
+            } else {
+                error.textContent = 'Incorrect password. Please try again.';
+                input.value = '';
+                input.focus();
+            }
+        });
+    </script>
+</body>
+</html>
