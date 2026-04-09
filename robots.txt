@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /login.html
+Disallow: /resources.html
+Disallow: /worksheet.html
+
+Sitemap: https://striblingfilm.com/sitemap.xml
