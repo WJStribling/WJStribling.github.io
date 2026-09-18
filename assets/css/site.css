@@ -1,0 +1,219 @@
+/* William J. Stribling — site styles
+   Ported from the Squarespace build, Sept 2026. */
+
+/* ---------- tokens ---------- */
+:root{
+  --paper:#F4F1EA;
+  --ink:#1C1B18;
+  --ink2:#3B3833;
+  --muted:#6F6A60;
+  --soft:#8A847A;
+  --rule:#D8D2C6;
+  --accent:#9B3B26;
+  --gutter:clamp(20px,4vw,64px);
+  --maxw:1500px;
+  --serif:'Newsreader',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+
+/* ---------- reset ---------- */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+a{color:inherit;text-decoration:none;transition:color .15s ease}
+a:hover{color:var(--accent)}
+h1,h2,h3,p,figure{margin:0;padding:0}
+.x-p,.x-h{margin:0;padding:0;font-family:inherit;color:inherit;text-transform:none;text-wrap:pretty}
+
+.skip-link{position:absolute;left:-9999px}
+.skip-link:focus{left:var(--gutter);top:12px;z-index:50;background:var(--ink);color:var(--paper);padding:8px 14px}
+
+/* ---------- shared helpers ---------- */
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.mono{font-family:var(--mono);font-size:12px;line-height:1.8;letter-spacing:.12em;text-transform:uppercase;font-weight:400}
+.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px}
+.ulink{border-bottom:1px solid var(--ink);padding-bottom:4px;align-self:flex-start}
+
+/* ---------- site header ---------- */
+.site-header{padding:28px 0 40px}
+.site-header .wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.site-nav{display:flex;flex-wrap:wrap;gap:8px 28px;padding-top:4px}
+.site-nav a{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding-bottom:2px;border-bottom:1px solid transparent}
+.site-nav a[aria-current="page"]{border-bottom-color:var(--ink)}
+.wordmark{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:.01em;white-space:nowrap}
+
+/* ---------- site footer ---------- */
+.site-footer{border-top:1px solid var(--rule);margin-top:96px;padding:28px 0 56px}
+.site-footer .wrap{display:flex;justify-content:center;gap:28px}
+.site-footer a{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.site-footer a:hover{color:var(--accent)}
+
+/* ---------- video frame (all pages) ---------- */
+.frame{position:relative;width:100%;aspect-ratio:16/9;background:#2A2824;overflow:hidden}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.frame.pbs{aspect-ratio:auto;padding-top:calc(56.25% + 43px)}
+.frame > img.still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.frame .play{position:absolute;inset:0;display:block;cursor:pointer;background:#2A2824}
+.frame .play img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .2s ease}
+.frame .play:hover img{opacity:.88}
+.frame .pbtn{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(244,241,234,.92);box-shadow:0 1px 12px rgba(0,0,0,.18);transition:transform .2s ease}
+.frame .pbtn::after{content:"";position:absolute;left:26px;top:21px;border-style:solid;border-width:11px 0 11px 17px;border-color:transparent transparent transparent #1C1B18}
+.frame .play:hover .pbtn{transform:scale(1.06)}
+.frame .play:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- contact block (all pages) ---------- */
+.contact{padding:120px 0 24px;display:flex;flex-direction:column;gap:14px}
+.contact .mono{color:var(--muted)}
+.contact-mail{font-size:clamp(20px,2.2vw,28px);font-weight:400;letter-spacing:-.005em;line-height:1.2;overflow-wrap:anywhere}
+
+/* ================= HOME ================= */
+.hm-hero{padding:48px 0 112px;align-items:end}
+.hm-hero-text{grid-column:1/span 8;display:flex;flex-direction:column;gap:40px}
+.hm-h1{font-size:clamp(40px,4.45vw,64px);line-height:1.06;font-weight:300;letter-spacing:-.02em}
+.hm-lede{font-size:clamp(19px,1.67vw,24px);line-height:1.5;font-weight:300;color:var(--ink2);max-width:680px}
+.hm-fig{grid-column:10/span 3;margin:0;display:flex;flex-direction:column;gap:12px}
+.hm-fig img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;background:#D9D2C4}
+.cap{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted)}
+.hm-workhead{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:20px;margin-bottom:56px}
+.hm-feature{display:flex;flex-direction:column;gap:24px;margin-bottom:96px}
+.hm-feature .grid{align-items:baseline}
+.hm-f-num{grid-column:1/span 1}
+.hm-f-title{grid-column:2/span 5;font-size:clamp(34px,3.05vw,44px);font-weight:300;font-style:italic;line-height:1.1;letter-spacing:-.01em}
+.hm-f-desc{grid-column:7/span 4;font-size:18px;line-height:1.5;color:var(--ink2)}
+.hm-f-meta{grid-column:11/span 2;text-align:right;font-size:11px;letter-spacing:.08em}
+.hm-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px;row-gap:80px}
+.hm-item{display:flex;flex-direction:column;gap:20px}
+.hm-cap{display:flex;gap:20px;align-items:baseline}
+.hm-num{width:28px;flex-shrink:0}
+.hm-capbody{display:flex;flex-direction:column;gap:8px}
+.hm-title{font-size:28px;font-weight:400;line-height:1.15;letter-spacing:-.01em}
+.hm-meta{font-size:11px;letter-spacing:.08em}
+.hm-watch{display:flex;flex-wrap:wrap;gap:4px 20px;font-size:11px;letter-spacing:.08em}
+.hm-watch a{border-bottom:1px solid var(--rule)}
+.hm-coach{margin-top:160px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:56px 0;align-items:center}
+.hm-coach-lab{grid-column:1/span 3;font-weight:500}
+.hm-coach-text{grid-column:4/span 6;font-size:clamp(20px,1.67vw,24px);line-height:1.4;font-weight:300}
+.hm-coach-cta{grid-column:11/span 2;justify-self:end}
+
+/* ================= MUSIC VIDEOS ================= */
+.pg-intro{padding:48px 0 96px;align-items:baseline}
+.pg-title{grid-column:1/-1;font-size:clamp(40px,4.45vw,64px);line-height:1.06;font-weight:300;letter-spacing:-.02em}
+.pg-sub{grid-column:1/span 7;margin-top:32px;font-size:clamp(17px,1.4vw,20px);line-height:1.6;color:var(--ink2)}
+.workhead{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:20px;margin-bottom:56px}
+.vgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px;row-gap:80px}
+.item{display:flex;flex-direction:column;gap:20px}
+.item .cap{display:flex;gap:20px;align-items:baseline;font-family:var(--serif);font-size:inherit;letter-spacing:normal;color:inherit}
+.num{width:28px;flex-shrink:0}
+.capbody{display:flex;flex-direction:column;gap:8px}
+.title{font-size:28px;font-weight:400;line-height:1.15;letter-spacing:-.01em}
+.meta{font-size:11px;letter-spacing:.08em}
+.mv-cta{margin-top:120px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:56px 0;align-items:center}
+.mv-cta-lab{grid-column:1/span 3}
+.mv-cta-title{grid-column:4/span 6;font-size:clamp(28px,2.8vw,40px);font-weight:300;letter-spacing:-.01em;line-height:1.1}
+.mv-cta-link{grid-column:10/span 3;justify-self:end}
+
+/* ================= COACHING ================= */
+.page-coaching{--ink2:#2A2824}
+.pg-lab{grid-column:1/span 3}
+.co-intro{padding:48px 0 0;align-items:baseline}
+.co-intro .pg-title{grid-column:4/span 9}
+.co-body{padding:96px 0 0}
+.co-text{grid-column:4/span 6;display:flex;flex-direction:column;gap:28px}
+.co-text .x-p{font-size:clamp(18px,1.5vw,21px);line-height:1.6;color:var(--ink2)}
+.co-text .lead{font-size:clamp(21px,1.8vw,26px);line-height:1.45;font-weight:300;color:var(--ink)}
+.co-text .sub{font-size:clamp(20px,1.7vw,25px);font-weight:400;line-height:1.25;letter-spacing:-.01em;color:var(--ink);margin-top:20px}
+.co-text a.inline{border-bottom:1px solid var(--rule)}
+.co-work{margin-top:120px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:56px 0;align-items:center}
+.co-work-lab{grid-column:1/span 3}
+.co-work-title{grid-column:4/span 6;font-size:clamp(28px,2.8vw,40px);font-weight:300;letter-spacing:-.01em;line-height:1.1}
+.co-work-cta{grid-column:10/span 3;justify-self:end}
+
+/* ================= ABOUT ================= */
+.page-about{--ink2:#2A2824}
+.ab-intro{padding:48px 0 0}
+.ab-lab{grid-column:1/span 3;padding-top:16px;color:var(--ink)}
+.ab-display{grid-column:4/span 9;font-size:clamp(34px,3.9vw,56px);line-height:1.1;font-weight:300;letter-spacing:-.02em}
+.ab-display span{color:var(--soft)}
+.ab-body{padding:120px 0 40px;align-items:start}
+.ab-fig{grid-column:1/span 3;margin:0;display:flex;flex-direction:column;gap:12px}
+.ab-fig img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;background:#D9D2C4}
+.ab-fig figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted)}
+.ab-bio{grid-column:4/span 6;display:flex;flex-direction:column;gap:28px}
+.ab-bio .x-p{font-size:clamp(18px,1.5vw,21px);line-height:1.6;color:var(--ink2)}
+.ab-bio a.inline{border-bottom:1px solid var(--rule)}
+.ab-facts{grid-column:11/span 2;display:flex;flex-direction:column;gap:32px;border-top:1px solid var(--rule);padding-top:16px;color:var(--muted);font-size:11px;letter-spacing:.06em}
+.ab-facts div{display:flex;flex-direction:column;gap:2px}
+.ab-facts b{font-weight:400;color:var(--ink)}
+
+/* ================= 404 ================= */
+.nf{padding:80px 0 0;display:flex;flex-direction:column;gap:32px;max-width:640px}
+.nf h1{font-size:clamp(34px,3.9vw,56px);font-weight:300;line-height:1.1;letter-spacing:-.02em}
+.nf p{font-size:clamp(18px,1.5vw,21px);line-height:1.6;color:var(--ink2)}
+
+/* ---------- pull quote on a project card (home) ---------- */
+.hm-quote{margin:6px 0 0;padding-left:16px;border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:8px}
+.hm-quote p{font-size:16px;line-height:1.5;font-style:italic;color:var(--ink2)}
+.hm-quote cite{font-family:var(--mono);font-size:10px;line-height:1.6;letter-spacing:.1em;text-transform:uppercase;font-style:normal;color:var(--muted)}
+
+/* ---------- testimonials (coaching) ---------- */
+.tm{margin-top:120px;border-top:1px solid var(--rule);padding-top:48px;align-items:start}
+.tm-lab{grid-column:1/span 3}
+.tm-list{grid-column:4/span 7;display:flex;flex-direction:column;gap:48px}
+.tm-quote{display:flex;flex-direction:column;gap:16px}
+.tm-quote p{font-size:clamp(19px,1.6vw,23px);line-height:1.5;font-weight:300;color:var(--ink)}
+.tm-quote cite{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-style:normal;color:var(--muted)}
+
+/* ================= responsive ================= */
+@media (max-width:900px){
+  .grid{grid-template-columns:minmax(0,1fr);row-gap:20px}
+  .grid > *{grid-column:1/-1 !important}
+
+  .site-header{padding:20px 0 24px}
+  .site-header .wrap{flex-direction:column-reverse;align-items:flex-start;gap:16px}
+  .site-footer{margin-top:64px}
+  .site-footer .wrap{flex-wrap:wrap;justify-content:flex-start;gap:16px 24px}
+
+  .hm-hero{padding:24px 0 64px;row-gap:40px}
+  .hm-hero-text{gap:24px}
+  .hm-fig{max-width:280px}
+  .hm-workhead{margin-bottom:32px}
+  .hm-feature{margin-bottom:56px}
+  .hm-f-meta{text-align:left}
+  .hm-grid{grid-template-columns:minmax(0,1fr);row-gap:48px}
+  .hm-title{font-size:22px}
+  .hm-coach{margin-top:96px;padding:40px 0}
+  .hm-coach-cta{justify-self:start}
+
+  .pg-intro{padding:24px 0 56px}
+  .pg-sub{margin-top:20px}
+  .workhead{margin-bottom:32px}
+  .vgrid{grid-template-columns:minmax(0,1fr);row-gap:48px}
+  .title{font-size:22px}
+  .mv-cta{margin-top:72px;padding:40px 0}
+  .mv-cta-link{justify-self:start}
+
+  .co-intro{padding-top:24px}
+  .co-body{padding-top:48px}
+  .co-text .sub{margin-top:12px}
+  .co-work{margin-top:72px;padding:40px 0}
+  .co-work-cta{justify-self:start}
+
+  .ab-intro{padding-top:24px}
+  .ab-lab{padding-top:0}
+  .ab-body{padding-top:56px;row-gap:40px}
+  .ab-fig{max-width:320px}
+  .ab-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+
+  .hm-quote{padding-left:12px}
+  .tm{margin-top:72px;padding-top:32px}
+  .tm-list{gap:36px}
+  .contact{padding-top:80px}
+}

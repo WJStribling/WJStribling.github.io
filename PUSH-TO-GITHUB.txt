@@ -1,0 +1,16 @@
+Paste this whole block into Terminal to publish the site.
+
+It starts a fresh git history (which is what wipes the old draft pages and
+the exposed preview password out of the public repo) and force-pushes it
+to WJStribling.github.io.
+
+  cd ~/Documents/stribling-site
+  git init -b main
+  git add -A
+  git commit -m "Rebuild site as static HTML, ported from Squarespace"
+  git remote add origin https://github.com/WJStribling/WJStribling.github.io.git
+  git push -f origin main
+
+If git asks for a username and password, stop — GitHub stopped accepting
+account passwords over git. Tell Claude and it will walk you through the
+browser sign-in instead.
