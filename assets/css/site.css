@@ -75,7 +75,7 @@ h1,h2,h3,p,figure{margin:0;padding:0}
 .contact-mail{font-size:clamp(20px,2.2vw,28px);font-weight:400;letter-spacing:-.005em;line-height:1.2;overflow-wrap:anywhere}
 
 /* ================= HOME ================= */
-.hm-hero{padding:48px 0 112px;align-items:end}
+.hm-hero{padding:48px 0 80px;align-items:end}
 .hm-hero-text{grid-column:1/span 8;display:flex;flex-direction:column;gap:40px}
 .hm-h1{font-size:clamp(40px,4.45vw,64px);line-height:1.06;font-weight:300;letter-spacing:-.02em}
 .hm-lede{font-size:clamp(19px,1.67vw,24px);line-height:1.5;font-weight:300;color:var(--ink2);max-width:680px}
@@ -170,6 +170,16 @@ h1,h2,h3,p,figure{margin:0;padding:0}
 .tm-quote{display:flex;flex-direction:column;gap:16px}
 .tm-quote p{font-size:clamp(19px,1.6vw,23px);line-height:1.5;font-weight:300;color:var(--ink)}
 .tm-quote cite{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-style:normal;color:var(--muted)}
+
+/* ---------- recent news (home) ---------- */
+.news{border-top:1px solid var(--ink);padding-top:20px;margin-bottom:112px}
+.news-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:36px}
+.news-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:32px;row-gap:36px}
+.news-item{display:flex;flex-direction:column;gap:10px}
+.news-kick{font-size:11px;letter-spacing:.08em}
+.news-title{font-size:clamp(20px,1.7vw,25px);font-weight:400;line-height:1.2;letter-spacing:-.01em}
+.news-title a{border-bottom:1px solid var(--rule)}
+.news-note{font-size:16px;line-height:1.5;color:var(--ink2)}
 
 /* ================= responsive ================= */
 @media (max-width:900px){
