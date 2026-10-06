@@ -235,6 +235,7 @@ h1,h2,h3,p,figure{margin:0;padding:0}
 .inq-form{display:flex;flex-direction:column;gap:26px}
 .field{display:flex;flex-direction:column;gap:8px}
 .field label{font-family:var(--mono);font-size:11px;line-height:1.6;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.field label .opt{text-transform:none;letter-spacing:0;color:var(--soft);font-style:italic}
 .field input,.field select,.field textarea{font-family:var(--serif);font-size:18px;line-height:1.5;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--rule);padding:8px 0;width:100%;border-radius:0;-webkit-appearance:none;appearance:none}
 .field textarea{min-height:130px;resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom-color:var(--ink)}

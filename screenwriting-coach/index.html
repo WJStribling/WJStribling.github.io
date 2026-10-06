@@ -164,8 +164,16 @@
         </div>
 
         <div class="field">
-          <label for="f-referral">Did someone refer you? (optional)</label>
-          <input id="f-referral" type="text" name="referred_by" placeholder="Their name" autocomplete="off">
+          <label for="f-referral">How did you find me? <span class="opt">optional</span></label>
+          <select id="f-referral" name="how_they_found_me">
+            <option value="">Select one</option>
+            <option>Internet search</option>
+            <option>Referral from a writer or colleague</option>
+            <option>A class or workshop I taught</option>
+            <option>Social media</option>
+            <option>One of my films or projects</option>
+            <option>Somewhere else</option>
+          </select>
         </div>
 
         <button class="inq-submit" type="submit">Send</button>
